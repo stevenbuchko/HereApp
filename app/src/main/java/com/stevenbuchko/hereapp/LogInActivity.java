@@ -1,16 +1,40 @@
 package com.stevenbuchko.hereapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class LogInActivity extends AppCompatActivity {
+
+    protected EditText mUsername;
+    protected EditText mPassword;
+    protected Button mLogInButton;
+    protected TextView mSignUpText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        mUsername = (EditText) findViewById(R.id.usernameLogin);
+        mPassword = (EditText) findViewById(R.id.passwordLogin);
+        mLogInButton = (Button) findViewById(R.id.logInButton);
+        mSignUpText = (TextView) findViewById(R.id.signUpLabel);
+
+        mSignUpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LogInActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
