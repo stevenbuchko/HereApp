@@ -19,4 +19,8 @@
     <string name="signup_error_title">Oops!</string>
     <string name="password_signup_error">Please enter a password.</string>
     <string name="email_signup_error">Please enter an email address.</string>
+    <string name="username_login_error">Please enter a username.</string>
+    <string name="login_error_title">Oops!</string>
+    <string name="password_login_error">Please enter a password.</string>
+    <string name="menu_logout_label">Logout</string>
 </resources>
