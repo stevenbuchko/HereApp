@@ -81,6 +81,7 @@ public class SignUpActivity extends AppCompatActivity {
                         @Override
                         public void done(ParseException e) {
                             mProgressBar.setVisibility(View.INVISIBLE);
+                            mProgressBar.bringToFront();
                             if (e == null) {
                                 // success
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);

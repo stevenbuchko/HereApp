@@ -72,6 +72,7 @@ public class LogInActivity extends AppCompatActivity {
                 else {
                     // Login
                     mProgressBar.setVisibility(View.VISIBLE);
+                    mProgressBar.bringToFront();
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser parseUser, ParseException e) {
