@@ -15,4 +15,8 @@
     <string name="parse_app_id">JAvosIHICTiSzVExRZsXFA900vMGJHYPtTn8uztq</string>
     <string name="parse_client_key">eo0iLdWNA1TcnaVQGwFE0v6lMk5xW4LTeaLw0MtW</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="username_signup_error">Please enter a username.</string>
+    <string name="signup_error_title">Oops!</string>
+    <string name="password_signup_error">Please enter a password.</string>
+    <string name="email_signup_error">Please enter an email address.</string>
 </resources>
