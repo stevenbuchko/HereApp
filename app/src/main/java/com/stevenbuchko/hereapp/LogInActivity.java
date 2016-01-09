@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.parse.LogInCallback;
@@ -21,6 +22,7 @@ public class LogInActivity extends AppCompatActivity {
     protected EditText mPassword;
     protected Button mLogInButton;
     protected TextView mSignUpText;
+    protected ProgressBar mProgressBar;
 
 
     @Override
@@ -32,6 +34,7 @@ public class LogInActivity extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.passwordLogin);
         mLogInButton = (Button) findViewById(R.id.logInButton);
         mSignUpText = (TextView) findViewById(R.id.signUpLabel);
+        mProgressBar = (ProgressBar) findViewById(R.id.loginProgressBar);
 
         mSignUpText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +71,11 @@ public class LogInActivity extends AppCompatActivity {
                 }
                 else {
                     // Login
+                    mProgressBar.setVisibility(View.VISIBLE);
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser parseUser, ParseException e) {
+                            mProgressBar.setVisibility(View.INVISIBLE);
                             if (e == null) {
                                 // Success
                                 Intent intent = new Intent(LogInActivity.this, MainActivity.class);

@@ -47,4 +47,12 @@
         android:layout_below="@+id/emailSignUp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signUpProgressBar"
+        android:layout_below="@+id/emailSignUp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 </RelativeLayout>

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -20,6 +21,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected EditText mPassword;
     protected EditText mEmail;
     protected Button mSignUpButton;
+    protected ProgressBar mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class SignUpActivity extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.passwordSignUp);
         mEmail = (EditText) findViewById(R.id.emailSignUp);
         mSignUpButton = (Button) findViewById(R.id.signUpButton);
+        mProgressBar = (ProgressBar) findViewById(R.id.signUpProgressBar);
 
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +71,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
                 else {
                     // create the new user
+                    mProgressBar.setVisibility(View.VISIBLE);
 
                     ParseUser newUser = new ParseUser();
                     newUser.setUsername(username);
@@ -76,6 +80,7 @@ public class SignUpActivity extends AppCompatActivity {
                     newUser.signUpInBackground(new SignUpCallback() {
                         @Override
                         public void done(ParseException e) {
+                            mProgressBar.setVisibility(View.INVISIBLE);
                             if (e == null) {
                                 // success
                                 Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
