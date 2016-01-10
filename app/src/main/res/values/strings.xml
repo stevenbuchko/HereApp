@@ -23,4 +23,9 @@
     <string name="login_error_title">Oops!</string>
     <string name="password_login_error">Please enter a password.</string>
     <string name="menu_logout_label">Logout</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">
+        AIzaSyBjQUDZaZdEshspJ0RZTmRunIeAkLxdkpo
+    </string>
+    <string name="create_event_button">CREATE EVENT</string>
 </resources>
