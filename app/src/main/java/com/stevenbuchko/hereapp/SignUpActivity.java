@@ -34,6 +34,8 @@ public class SignUpActivity extends AppCompatActivity {
         mSignUpButton = (Button) findViewById(R.id.signUpButton);
         mProgressBar = (ProgressBar) findViewById(R.id.signUpProgressBar);
 
+        mProgressBar.bringToFront();
+
         mSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

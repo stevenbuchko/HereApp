@@ -36,6 +36,8 @@ public class LogInActivity extends AppCompatActivity {
         mSignUpText = (TextView) findViewById(R.id.signUpLabel);
         mProgressBar = (ProgressBar) findViewById(R.id.loginProgressBar);
 
+        mProgressBar.bringToFront();
+
         mSignUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +74,6 @@ public class LogInActivity extends AppCompatActivity {
                 else {
                     // Login
                     mProgressBar.setVisibility(View.VISIBLE);
-                    mProgressBar.bringToFront();
                     ParseUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser parseUser, ParseException e) {
