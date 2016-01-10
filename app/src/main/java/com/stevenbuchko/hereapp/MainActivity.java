@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
@@ -14,10 +16,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
 
+    protected Button mCreateEventButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mCreateEventButton = (Button) findViewById(R.id.createEventButton);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
@@ -29,6 +35,14 @@ public class MainActivity extends AppCompatActivity {
         else {
             Log.i(TAG, currentUser.getUsername());
         }
+
+        mCreateEventButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         ParseAnalytics.trackAppOpenedInBackground(getIntent());
     }
